@@ -1,0 +1,18 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+body {
+  font-family: variables.$font-open-sans;
+  font-size: functions.responsive-value(16, 12, "default", "default", "fixed-both", "px");
+  line-height: 1.33;
+  color: variables.$color-414141;
+
+  .scroll-lock & {
+    overflow: hidden;
+  }
+
+  @media (min-width: #{768 + 0.1px}) {
+    line-height: 1.5;
+  }
+}
