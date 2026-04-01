@@ -1,0 +1,43 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.licenses {
+  padding-block: functions.responsive-value(56, 29) functions.responsive-value(72, 28);
+  background-color: variables.$color-878787;
+
+  @media (max-width: 768px) {
+    color: variables.$color-white;
+  }
+
+  @media (min-width: #{768 + 0.1px}) {
+    background-color: variables.$color-f2f2f2;
+  }
+
+  // .licenses__title
+  &__title {
+    margin-block-end: functions.responsive-value(40, 19);
+  }
+}
+
+.licenses-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(functions.responsive-value(280, 112), 1fr));
+  row-gap: 20px;
+  column-gap: functions.responsive-value(32, 24);
+
+  // .licenses-gallery__item
+  &__item {
+  }
+
+  // .licenses-gallery__image
+  &__image {
+    display: block;
+    aspect-ratio: 280 / 384;
+    font-size: 0;
+    background-color: variables.$color-white;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+    border: functions.responsive-value(24, 8) solid variables.$color-white;
+    border-radius: functions.responsive-value(16, 8);
+  }
+}
