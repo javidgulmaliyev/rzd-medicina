@@ -14,7 +14,9 @@
     <main class="main">
       @@include("pages/about/about.html")
     </main>
-    @@include("base/footer.html")
+    @@include("base/footer.html", {
+    "page": "about"
+    })
     @@include("ui/up.html")
     @@include("dialogs/dialogs.html")
   </div>

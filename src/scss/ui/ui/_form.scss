@@ -45,10 +45,10 @@
     --button-padding-inline: 13px;
     --button-font-weight: 700;
 
-    margin-inline: auto;
+    margin-inline: var(--form-button-margin-inline, auto);
 
     @media (max-width: 1024px) {
-      --button-inline-size: 100%;
+      --button-inline-size: var(--form-button-inline-size, 100%);
     }
   }
 }
@@ -68,6 +68,15 @@
     font-size: 0;
     accent-color: variables.$color-ff4023;
     cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid var(--outline-color, currentColor);
+      outline-offset: 2px;
+
+      @include mixins.hover {
+        outline: none;
+      }
+    }
 
     &::after {
       content: "";

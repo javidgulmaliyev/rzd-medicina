@@ -1,0 +1,49 @@
+<footer class="footer container">
+  <div class="footer-top">
+    <div class="footer-top__column">
+      <h2 class="footer-top__title h2">Записаться на прием</h2>
+      <form class="form" id="form-footer" action="#">
+        <div class="form__inputs">
+          <input class="form__input" id="form-footer-text" name="form-footer-text" type="text" inputmode="text" placeholder="Ваше имя" required>
+          <input class="form__input" id="form-footer-tel" name="form-footer-tel" type="tel" inputmode="tel" placeholder="Номер телефона" required>
+        </div>
+        <div class="form__checkbox form-checkbox">
+          <input class="form-checkbox__input" id="form-footer-policy" name="form-footer-policy" type="checkbox" value="#" required aria-label="Согласие на обработку персональных данных">
+          <div class="form-checkbox__label">Я согласен на обработку&#32;<a href="#" target="_blank" rel="noopener noreferrer">персональных данных</a></div>
+        </div>
+        <button class="form__button button" type="submit">
+          <span class="button__text">Жду звонка</span>
+        </button>
+      </form>
+    </div>
+    <div class="footer-top__map responsive-media">
+      <img src="img/images/footer/1.jpg" alt="" loading="lazy">
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom__row">
+      <a class="footer-bottom__logo responsive-media" href="/" @@if (page==="index" ) { aria-current="page" } aria-label="На главную">
+        <img src="img/logo-full-white.png" alt="" loading="lazy">
+      </a>
+      <address class="footer-address">
+        <a class="footer-address__tel" href="tel:+88008007080">8 800 800 70 80</a>
+        <a class="footer-address__location" href="#" target="_blank" rel="noopener noreferrer">Вологда, ул. Челюскинцев, 48</a>
+      </address>
+    </div>
+    <div class="footer-text">
+      <div class="footer-text__column">
+        <p>
+          Сайт не является публичной офертой, лицензия ЛО-35-01-002829 от 02 октября 2019 года.
+        </p>
+        <p>
+          Выдана Департаментом здравоохранения Вологодской области.
+        </p>
+      </div>
+      <div class="footer-text__column footer-text__column--copy">
+        <p>
+          &copy; 2020 Частное учреждение здравоохранения «Больница «РЖД-Медицина» города Вологда»
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
