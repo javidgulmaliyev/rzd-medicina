@@ -23,15 +23,19 @@ body {
     z-index: 150;
     background-color: rgba(65, 65, 65, 0.5);
 
-    @include mixins.prefers-reduced-motion {
-      transition-property: opacity, visibility;
-      transition-duration: 0.3s;
-    }
-
-    html:not(.burger-active) & {
+    html:not(.burger-active, .dialog-active) & {
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
+    }
+
+    .dialog-active & {
+      z-index: 250;
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: opacity, visibility;
+      transition-duration: 0.3s;
     }
   }
 }

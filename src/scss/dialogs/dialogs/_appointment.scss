@@ -3,12 +3,8 @@
 @use "../../variables/variables";
 
 .appointment {
-  z-index: 250;
+  z-index: 300;
   padding: 24px;
-
-  &::backdrop {
-    background-color: rgba(65, 65, 65, 0.5);
-  }
 
   // .appointment__inner
   &__inner {
