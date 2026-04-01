@@ -1,0 +1,51 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.appointment {
+  z-index: 250;
+  padding: 24px;
+
+  &::backdrop {
+    background-color: rgba(65, 65, 65, 0.5);
+  }
+
+  // .appointment__inner
+  &__inner {
+    position: relative;
+    isolation: isolate;
+    inline-size: 100%;
+    max-inline-size: 480px;
+    margin: auto;
+    padding: 40px functions.responsive-value(32, 29);
+    padding-inline: functions.responsive-value(48, 24);
+    color: variables.$color-white;
+    background-color: variables.$color-414141;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 16px;
+  }
+
+  // .appointment__close
+  &__close {
+    position: absolute;
+    inset-block-start: functions.responsive-value(31, 23);
+    inset-inline-end: functions.responsive-value(24, 16);
+    z-index: 1;
+  }
+
+  // .appointment__title
+  &__title {
+    margin-block-end: functions.responsive-value(40, 27);
+    padding-inline: 16px;
+    font-weight: 600;
+    font-size: functions.responsive-value(32, 24, 320, 280, "fixed-start-value", "px");
+    line-height: 1;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-wrap: balance;
+
+    @media (min-width: #{320 + 0.1px}) {
+      font-size: functions.responsive-value(40, 32);
+    }
+  }
+}

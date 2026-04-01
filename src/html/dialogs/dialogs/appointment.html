@@ -1,0 +1,19 @@
+<dialog class="appointment" id="appointment-dialog">
+  <div class="appointment__inner" data-dialog="inner">
+    <button class="appointment__close close" data-dialog="close" aria-label="Закрыть"></button>
+    <h2 class="appointment__title">Записаться на прием</h2>
+    <form class="form" id="form-appointment" action="#">
+      <div class="form__inputs">
+        <input class="form__input" id="form-appointment-text" name="form-appointment-text" type="text" inputmode="text" placeholder="Ваше имя" required>
+        <input class="form__input" id="form-appointment-tel" name="form-appointment-tel" type="tel" inputmode="tel" placeholder="Номер телефона" required>
+      </div>
+      <div class="form__checkbox form-checkbox">
+        <input class="form-checkbox__input" id="form-appointment-policy" name="form-appointment-policy" type="checkbox" value="#" required aria-label="Согласие на обработку персональных данных">
+        <div class="form-checkbox__label">Я согласен на обработку&#32;<a href="#" target="_blank" rel="noopener noreferrer">персональных данных</a></div>
+      </div>
+      <button class="form__button button" type="submit">
+        <span class="button__text">Жду звонка</span>
+      </button>
+    </form>
+  </div>
+</dialog>

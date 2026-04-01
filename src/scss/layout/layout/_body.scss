@@ -12,7 +12,26 @@ body {
     overflow: hidden;
   }
 
-  @media (min-width: #{768 + 0.1px}) {
+  @media (min-width: #{1024 + 0.1px}) {
     line-height: 1.5;
+  }
+
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    background-color: rgba(65, 65, 65, 0.5);
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: opacity, visibility;
+      transition-duration: 0.3s;
+    }
+
+    html:not(.burger-active) & {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
   }
 }

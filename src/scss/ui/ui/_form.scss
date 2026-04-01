@@ -1,0 +1,99 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.form {
+  > *:last-child {
+    margin-block-end: 0;
+  }
+
+  // .form__inputs
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-block-end: 16px;
+  }
+
+  // .form__input
+  &__input {
+    block-size: functions.responsive-value(56, 48);
+    padding-inline: 16px;
+    font-size: functions.responsive-value(16, 14);
+    letter-spacing: 0.01em;
+    color: variables.$color-414141;
+    background-color: variables.$color-white;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 8px;
+
+    &::placeholder {
+      font-style: italic;
+      color: variables.$color-828282;
+    }
+  }
+
+  // .form__checkbox
+  &__checkbox {
+    margin-block-end: 16px;
+  }
+
+  // .form__button
+  &__button {
+    --button-background-color-1: #f2f2f2;
+    --button-background-color-2: #b9b9b9;
+    --button-color: #{variables.$color-414141};
+    --button-padding-inline: 13px;
+    --button-font-weight: 700;
+
+    margin-inline: auto;
+
+    @media (max-width: 1024px) {
+      --button-inline-size: 100%;
+    }
+  }
+}
+
+.form-checkbox {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  inline-size: fit-content;
+
+  // .form-checkbox__input
+  &__input {
+    appearance: auto;
+    flex: 0 0 auto;
+    font-size: 0;
+    accent-color: variables.$color-ff4023;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+  }
+
+  // .form-checkbox__label
+  &__label {
+    font-size: 12px;
+
+    a {
+      position: relative;
+      z-index: 2;
+      text-decoration: underline;
+
+      @include mixins.prefers-reduced-motion {
+        transition-property: color;
+        transition-duration: 0.3s;
+      }
+
+      @include mixins.hover {
+        color: variables.$color-ff4023;
+      }
+    }
+  }
+}

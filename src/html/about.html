@@ -8,12 +8,15 @@
 <body>
   @@include("icons/icons.svg")
   <div class="wrapper" data-wrapper>
-    @@include("base/header.html")
+    @@include("base/header.html", {
+    "page": "about"
+    })
     <main class="main">
       @@include("pages/about/about.html")
     </main>
     @@include("base/footer.html")
     @@include("ui/up.html")
+    @@include("dialogs/dialogs.html")
   </div>
   @@include("base/js.html")
 </body>

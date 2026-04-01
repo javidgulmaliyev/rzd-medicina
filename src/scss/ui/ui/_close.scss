@@ -1,0 +1,43 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.close {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 auto;
+  display: block;
+  inline-size: 24px;
+  aspect-ratio: 1 / 1;
+  align-self: end;
+  font-size: 0;
+
+  @include mixins.prefers-reduced-motion {
+    transition-property: color;
+    transition-duration: 0.3s;
+  }
+
+  @include mixins.hover {
+    color: variables.$color-ff4023;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    inline-size: 22px;
+    block-size: 2px;
+    background-color: currentColor;
+    border-radius: 4px;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}

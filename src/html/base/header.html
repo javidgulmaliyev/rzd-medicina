@@ -1,23 +1,39 @@
 <header class="header" id="header" data-header="header" data-burger="wrapper">
   <div class="header__wrapper container" data-header="wrapper">
     <div class="header-logo">
-      <a class="header-logo__image ibg" href="#">
-        <!-- <img src="@img" alt="Лого"> -->
+      <a class="header-logo__image responsive-media" href="/" @@if (page==="index" ) { aria-current="page" } aria-label="На главную">
+        <img src="img/logo-full.png" alt="">
       </a>
     </div>
-    <button class="burger-button" data-burger="button">
-      <span class="burger-button__line burger-button__line--top"></span>
-      <span class="burger-button__line burger-button__line--center"></span>
-      <span class="burger-button__line burger-button__line--bottom"></span>
-    </button>
-    <div class="header-nav" data-burger="menu">
-      <nav class="header-nav__inner" aria-label="Главная навигация">
-        <ul class="header-nav__list">
-          <li class="header-nav__item">
-            <a class="header-nav__link" href="#">link</a>
-          </li>
-        </ul>
-      </nav>
+    <div class="header-tel">
+      <a class="header-tel__link" href="tel:+8172515000">8 (8172) 51-50-00</a>
+      <span class="header-tel__text">МЫ ОТКРЫТЫ ДЛЯ ВСЕХ</span>
     </div>
+    <a class="header-location" href="#" target="_blank" rel="noopener noreferrer">
+      <span class="header-location__city">Вологда</span>
+      <span class="header-location__street">ул. Челюскинцев, 48</span>
+    </a>
+    <button class="header__button button" data-dialog-id="appointment-dialog">
+      <span class="button__text">Записаться</span>
+    </button>
+    <button class="burger-open-button" data-burger="open">
+      <span class="burger-open-button__line burger-open-button__line--top"></span>
+      <span class="burger-open-button__line burger-open-button__line--center"></span>
+      <span class="burger-open-button__line burger-open-button__line--bottom"></span>
+    </button>
   </div>
 </header>
+<div class="burger" data-burger="menu">
+  <button class="burger__close close" data-burger="close"></button>
+  <a class="burger__image responsive-media" href="/" @@if (page==="index" ) { aria-current="page" } aria-label="На главную">
+    <img src="img/logo-full-white-burger.png" alt="" loading="lazy">
+  </a>
+  <a class="burger__location" href="#" target="_blank" rel="noopener noreferrer">Вологда, ул. Челюскинцев, 48</a>
+  <div class="burger__tel burger-tel">
+    <a class="burger-tel__link" href="tel:+800800800780">8 800 800 70 80</a>
+    <span class="burger-tel__text">Звонок по России бесплатный</span>
+  </div>
+  <button class="burger__button button" data-dialog-id="appointment-dialog">
+    <span class="button__text">ЗАПИСАТЬСЯ НА ПРИЕМ К ДЕРМАТОЛОГУ</span>
+  </button>
+</div>
