@@ -1,0 +1,230 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.doctors {
+  padding-block: functions.responsive-value(40, 32) functions.responsive-value(20, 16);
+  background-color: variables.$color-f2f2f2;
+
+  > *:last-child {
+    margin-block-end: 0;
+  }
+
+  // .doctors__title
+  &__title {
+    margin-block-end: functions.responsive-value(64, 24);
+  }
+
+  // .doctors__advantages
+  &__advantages {
+    margin-block-end: functions.responsive-value(64, 16);
+    margin-inline: auto;
+  }
+}
+
+.doctors-advantages {
+  display: grid;
+  gap: functions.responsive-value(88, 32);
+  inline-size: fit-content;
+
+  @media (min-width: #{768 + 0.1px}) {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+
+  // .doctors-advantages__item
+  &__item {
+    display: grid;
+    gap: functions.responsive-value(24, 12);
+
+    @media (min-width: #{768 + 0.1px}) {
+      grid-template-rows: functions.responsive-value(136, 64) auto;
+      justify-items: center;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: functions.responsive-value(136, 64) auto;
+      align-items: center;
+    }
+  }
+
+  // .doctors-advantages__icon
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: functions.responsive-value(136, 64);
+    aspect-ratio: 1 / 1;
+    font-size: 0;
+    border: functions.responsive-value(2, 1) solid;
+    border-radius: 50%;
+  }
+
+  // .doctors-advantages__text
+  &__text {
+    font-weight: 700;
+    font-size: functions.responsive-value(24, 16);
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+
+    @media (min-width: #{768 + 0.1px}) {
+      line-height: 1.33;
+    }
+  }
+}
+
+.doctors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(functions.responsive-value(500, 248), 1fr));
+  gap: functions.responsive-value(32, 8);
+
+  // .doctors-list__item
+  &__item {
+  }
+}
+
+.doctor-card {
+  position: relative;
+  isolation: isolate;
+  block-size: 100%;
+  padding-block: functions.responsive-value(48, 24) functions.responsive-value(38, 28);
+  padding-inline: functions.responsive-value(48, 24);
+  background-color: variables.$color-white;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+  border-radius: functions.responsive-value(16, 8);
+
+  @media (min-width: #{768 + 0.1px}) {
+    border: 1px solid variables.$color-black;
+  }
+
+  > *:last-child {
+    margin-block-end: 0;
+  }
+
+  // .doctor-card__header
+  &__header {
+    display: grid;
+    grid-template-columns: functions.responsive-value(136, 80) auto;
+    align-items: center;
+    gap: functions.responsive-value(40, 16);
+    margin-block-end: functions.responsive-value(32, 16);
+  }
+
+  // .doctor-card__icon
+  &__icon {
+    inline-size: functions.responsive-value(136, 80);
+    aspect-ratio: 1 / 1;
+    font-size: 0;
+    border-radius: 50%;
+  }
+
+  // .doctor-card__about
+  &__about {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: functions.responsive-value(6, 8);
+  }
+
+  // .doctor-card__title
+  &__title {
+  }
+
+  // .doctor-card__link
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-weight: 700;
+    font-size: functions.responsive-value(24, 14);
+    line-height: calc(32 / 24);
+    letter-spacing: 0.01em;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-ff4023;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+  }
+
+  // .doctor-card__surname
+  &__surname {
+    font-size: functions.responsive-value(32, 16);
+  }
+
+  // .doctor-card__name
+  &__name {
+  }
+
+  // .doctor-card__specialty
+  &__specialty {
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.01em;
+
+    @media (min-width: #{768 + 0.1px}) {
+      line-height: 1;
+      color: variables.$color-ff4023;
+    }
+  }
+
+  // .doctor-card__advantages
+  &__advantages {
+    margin-block-end: functions.responsive-value(32, 16);
+  }
+
+  // .doctor-card__text
+  &__text {
+    @media (min-width: #{768 + 0.1px}) {
+      letter-spacing: 0.01em;
+    }
+  }
+}
+
+.doctor-advantages {
+  // .doctor-advantages__item
+  &__item {
+    display: flex;
+    align-items: start;
+    gap: functions.responsive-value(6, 4);
+    font-weight: 600;
+    font-size: functions.responsive-value(16, 14);
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+
+    &:not(:last-child) {
+      margin-block-end: 0.5em;
+    }
+
+    @media (min-width: #{768 + 0.1px}) {
+      line-height: 1;
+    }
+
+    &::before {
+      content: "";
+      flex: 0 0 auto;
+      block-size: 1lh;
+      inline-size: functions.responsive-value(14, 8);
+      aspect-ratio: 1 / 1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' fill='none' viewBox='0 0 8 8'%3E%3Cpath fill='%23ff4023' fill-rule='evenodd' d='M5.71.8C5.71.1 4.45 0 4 0S2.29.16 2.29.8V2.3H.8C.09 2.29 0 3.55 0 4s.09 1.71.8 1.71H2.3V7.2C2.29 7.84 3.56 8 4 8c.45 0 1.71-.09 1.71-.8V5.7H7.2C7.91 5.71 8 4.45 8 4s-.09-1.71-.8-1.71H5.7z' clip-rule='evenodd'/%3E%3C/svg%3E");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: functions.responsive-value(14, 8) functions.responsive-value(14, 8);
+
+      @media (min-width: #{768 + 0.1px}) {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' viewBox='0 0 14 14'%3E%3Cpath stroke='%23ff4023' d='M7 .5c.38 0 1.07.04 1.65.21q.45.14.66.33.2.16.19.37V4.5h3.09q.2 0 .37.19.2.22.33.66a6 6 0 0 1 0 3.3q-.14.45-.33.66-.16.2-.37.19H9.5v3.09q0 .2-.19.37-.22.2-.66.33a5.97 5.97 0 0 1-3.29-.04q-.45-.15-.68-.35-.2-.17-.18-.31V9.5H1.41q-.2 0-.37-.19a2 2 0 0 1-.33-.66 6 6 0 0 1 0-3.3q.14-.45.33-.66.16-.2.37-.19H4.5V1.41q-.01-.15.18-.31.24-.2.68-.34C5.96.56 6.65.5 7 .5Z'/%3E%3C/svg%3E");
+      }
+    }
+  }
+}
