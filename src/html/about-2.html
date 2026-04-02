@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("base/head.html", {
+"title": "Больница РЖД в Вологде"
+})
+
+<body>
+  @@include("icons/icons.svg")
+  <div class="wrapper" data-wrapper>
+    @@include("base/header.html", {
+    "page": "about"
+    })
+    <main class="main">
+      @@include("pages/about-2/about.html")
+    </main>
+    @@include("base/footer.html", {
+    "page": "about"
+    })
+    @@include("ui/up.html")
+    @@include("dialogs/dialogs.html")
+  </div>
+  @@include("base/js.html")
+</body>
+
+</html>
