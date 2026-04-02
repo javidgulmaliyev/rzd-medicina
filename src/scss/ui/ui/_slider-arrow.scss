@@ -1,0 +1,50 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.slider-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  inline-size: 56px;
+  aspect-ratio: 1 / 1;
+  font-size: 0;
+  color: variables.$color-ff4023;
+  background-color: variables.$color-white;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+  border: 2px solid variables.$color-ff4023;
+  border-radius: 50%;
+  pointer-events: all;
+  cursor: pointer;
+
+  // .slider-arrow--prev
+  &--prev {
+    margin-inline-end: auto;
+    transform: rotate(180deg);
+  }
+
+  // .slider-arrow--next
+  &--next {
+    margin-inline-start: auto;
+  }
+
+  &.swiper-button-disabled {
+    display: none;
+  }
+
+  @include mixins.prefers-reduced-motion {
+    transition-property: color, background-color;
+    transition-duration: 0.3s;
+  }
+
+  @include mixins.hover {
+    color: variables.$color-white;
+    background-color: variables.$color-ff4023;
+  }
+
+  svg {
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.24));
+    transform: translateX(2.5px) translateZ(0);
+  }
+}

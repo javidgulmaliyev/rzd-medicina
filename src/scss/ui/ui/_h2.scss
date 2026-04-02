@@ -8,7 +8,7 @@
   line-height: 1.09;
   letter-spacing: 0.01em;
   text-align: var(--h2-text-align, center);
-  text-wrap: balance;
+  text-wrap: var(--h2-text-wrap, balance);
 
   @media (min-width: #{1024 + 0.1px}) {
     line-height: 1;
