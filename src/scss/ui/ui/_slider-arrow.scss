@@ -29,7 +29,7 @@
     margin-inline-start: auto;
   }
 
-  &.swiper-button-disabled {
+  &:is(.swiper-button-disabled, .swiper-button-lock) {
     display: none;
   }
 
